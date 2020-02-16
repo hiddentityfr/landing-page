@@ -1,25 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Grommet, ThemeType } from 'grommet';
+
+import { AppBar, Footer } from './components';
+import { Presentation, Demo } from './pages';
+
+const theme: ThemeType = {
+  global: {
+    colors: {
+      brand: '#339999',
+      brandLight: '#33999978',
+      redLight: '#c83e3e78',
+      primary: 'linen',
+    },
+    font: {
+      family: 'Roboto',
+      size: '18px',
+      height: '20px',
+    },
+  },
+  formField: {
+    border: {
+      side: 'all',
+    },
+  },
+  anchor: {
+    extend: () => ({
+      outlineColor: 'none',
+      boxShadow: 'none',
+    }),
+    hover: {
+      extend: () => ({
+        filter: 'brightness(75%)',
+      }),
+    }
+  }
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme} full id='app'>
+      <Box fill>
+        <AppBar />
+        <Box fill overflow={{ horizontal: 'hidden' }}>
+          <Presentation />
+          <Demo />
+        </Box>
+        <Footer />
+      </Box>
+    </Grommet>
   );
 }
 
