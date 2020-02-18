@@ -39,9 +39,9 @@ const theme: ThemeType = {
 function App() {
   return (
     <Grommet theme={theme} full id='app'>
-      <Box fill>
+      <Box overflow={{ horizontal: 'hidden' }}>
         <AppBar />
-        <Box fill overflow={{ horizontal: 'hidden' }}>
+        <Box fill>
           <Presentation />
           <Demo />
         </Box>

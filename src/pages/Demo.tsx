@@ -41,10 +41,15 @@ export const Demo: React.FC = () => (
     align='center'
     background='primary'
     pad='large'
+    wrap
   >
-    <Box direction='row' align='center'>
-      <Heading>Nous retirons toutes les informations</Heading>&ensp;
-      <Heading margin='none' color='redLight' style={{ textDecoration: 'line-through' }}>inutiles</Heading>
+    <Box align='center' justify='center' alignContent='center'>
+      <Heading textAlign='center'>
+        Nous retirons toutes les informations&thinsp;
+        <del style={{ textDecoration: 'line-through', color: '#c83e3e78' }}>
+          inutiles
+        </del>
+      </Heading>
     </Box>
     <Box
       align='center'
@@ -52,11 +57,11 @@ export const Demo: React.FC = () => (
       alignContent='center'
       background='white'
       elevation='medium'
-      style={{ overflow: 'hidden' }}
       direction='row'
       gap='large'
       pad='medium'
       round
+      wrap
       >
         {words.map((word) => (
           <Heading

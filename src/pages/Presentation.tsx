@@ -22,6 +22,7 @@ export const Presentation: React.FC = () => {
       align='center'
       background='brandLight'
       pad='xlarge'
+      wrap
     >
       <Box width='large'>
         <Heading>Trouvez l'emploi que vous méritez vraiment</Heading>
